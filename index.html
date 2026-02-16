@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サイト名 | キャッチコピー</title>
+  <meta name="description" content="このページの説明">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="サイト名 | キャッチコピー">
+  <meta property="og:description" content="このページの説明">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/img/ogp.jpg">
+
+  <!-- canonical -->
+  <link rel="canonical" href="https://example.com/">
+
+  <!-- favicon -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+
+  <!-- Reset CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+
+  <!-- Google Fonts -->
+
+  <!-- Slick CSS（必要な場合のみ有効化） -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+ 
+
+  <!-- Project CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header__inner inner">
+      <h1 class="header__logo">
+        <a class="header__logo-link" href="/">
+          <img src="img/logo.svg" alt="サイト名ロゴ">
+        </a>
+      </h1>
+      <nav class="header__nav" aria-label="グローバルナビ">
+        <ul class="header__list">
+          <li class="header__item">
+            <a class="header__link" href="#">Menu</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- ①ハンバーガーメニュー -->
+      <button class="btn-trigger sp-only" id="btn" aria-label="メニューを開く" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- ②SPメニュー -->
+      <div class="sp-menu-wrapper">
+        <nav class="sp-menu" aria-label="グローバルナビ">
+          <ul class="sp-menu__list">
+            <li class="sp-menu__item">
+              <a class="sp-menu__link" href="#">トップページ</a>
+            </li>
+            <li class="sp-menu__item">
+              <a class="sp-menu__link" href="#">トップページ</a>
+            </li>
+            <li class="sp-menu__item">
+              <a class="sp-menu__link" href="#">トップページ</a>
+            </li>
+            <li class="sp-menu__item">
+              <a class="sp-menu__link" href="#">トップページ</a>
+            </li>
+            <li class="sp-menu__item">
+              <a class="sp-menu__link" href="#">トップページ</a>
+            </li>
+            <li class="sp-menu__item">
+              <a class="sp-menu__link" href="#">トップページ</a>
+            </li>
+            <li class="sp-menu__item">
+              <a class="sp-menu__link" href="#">トップページ</a>
+            </li>
+            <li class="sp-menu__item">
+              <a class="sp-menu__link" href="#">トップページ</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    <section class="section">
+      <h2 class="section__title">ページタイトル</h2>
+      <p class="section__lead">概要テキスト</p>
+      <a class="btn" href="#">ボタンテキスト</a>
+
+      <!-- ③ボタン -->
+      <a class="btn" href="#">お問い合わせ</a>
+
+      <!-- ④カード -->
+      <div class="card-wrapper inner">
+        <a class="card" href="#">
+          <div class="card__image">
+            <img src="img/house01 1.png" alt="img01">
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">タイトル</h3>
+            <p class="card__text">概要テキスト</p>
+          </div>
+        </a>
+        <a class="card" href="#">
+          <div class="card__image">
+            <img src="img/house02 1.png" alt="img01">
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">タイトル</h3>
+            <p class="card__text">概要テキスト</p>
+          </div>
+        </a>
+        <a class="card" href="#">
+          <div class="card__image">
+            <img src="img/house03 1.png" alt="img01">
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">タイトル</h3>
+            <p class="card__text">概要テキスト</p>
+          </div>
+        </a>
+        <a class="card" href="#">
+          <div class="card__image">
+            <img src="img/house01 1.png" alt="img01">
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">タイトル</h3>
+            <p class="card__text">概要テキスト</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- ⑤モーダル -->
+      <div class="modal-wrapper inner">
+        <button id="open" class="btn modal__link js-open">
+          モーダルへ
+        </button>
+      
+        <div id="mask" class="hidden js-mask"></div>
+      
+        <div id="modal" class="hidden js-modal">
+          <div class="modal__batsu js-close">
+            <img src="img/細いバツのアイコン (1) 1.png" alt="閉じる">
+          </div>
+      
+          <div class="modal__content">
+            <div class="modal__header fc-blue">
+              <span class="modal__badge">更新情報</span>
+              <span class="modal__date">2024.05.01</span>
+            </div>
+      
+            <h3 class="modal__title">タイトル</h3>
+      
+            <div class="modal__body">
+              <div class="modal__image">
+                <img src="img/house01 1.png" alt="img01">
+              </div>
+      
+              <p class="modal__text">
+                弊社は、お客様により良いサービスを提供するため、ホームページをリニューアルいたしました。新しいデザインと使いやすさを追求し、お客様が情報をより簡単に見つけられるように工夫しました。<br>
+                新しいホームページでは、以下のような改善点がございます：<br><br>
+                ・モダンでスタイリッシュなデザインにより、情報の見やすさと視覚的な魅力を向上<br>
+                ・より直感的で分かりやすいナビゲーションメニューにより、目的の情報へのアクセスがスムーズになりました<br>
+                ・より多くの情報やサービスを掲載し、お客様のニーズに合った情報を提供するようになりました<br>
+                ・モバイルフレンドリーなデザインで、スマートフォンやタブレットからも快適に閲覧できます<br><br>
+                弊社のホームページは、お客様とのコミュニケーションや情報提供の重要なツールです。より使いやすく、わかりやすいホームページを提供することで、お客様との良好な関係を築いていくことが目標です。<br><br>
+                ぜひ、新しいホームページをご覧いただき、お客様のご意見やご要望をお聞かせください。今後もお客様により良いサービスを提供できるよう努めてまいります。
+              </p>
+            </div>
+      
+            <button class="btn modal__close js-close">
+              閉じる
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑥アコーディオン -->
+      <div class="accordion inner">
+        <div class="accordion-header">
+          <span>アコーディオン見出し</span>
+        </div>
+        <div class="accordion-content">
+          <span>アコーディオンコンテンツ</span>
+        </div>
+      
+        <div class="accordion-header">
+          <span>アコーディオン見出し</span>
+        </div>
+        <div class="accordion-content">
+          <span>アコーディオンコンテンツ</span>
+        </div>
+      
+        <div class="accordion-header">
+          <span>アコーディオン見出し</span>
+        </div>
+        <div class="accordion-content">
+          <span>アコーディオンコンテンツ</span>
+        </div>
+      </div>
+
+      <!-- ⑦スライダー -->
+      <div class="slider-wrapper inner">
+        <ul class="slider">
+          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house01 1.png" alt="img01"></a></li>
+          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house02 1.png" alt="img02"></a></li>
+          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house03 1.png" alt="img03"></a></li>
+          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house01 1.png" alt="img04"></a></li>
+          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house02 1.png" alt="img05"></a></li>
+          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house03 1.png" alt="img06"></a></li>
+          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house01 1.png" alt="img07"></a></li>
+          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house02 1.png" alt="img08"></a></li>
+        </ul>
+      </div>
+      
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p class="footer__copy">&copy; 2026 Your Brand</p>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+
+  <!-- Slick JS（必要な場合のみ有効化） -->
+  
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+ 
+
+  <!-- Project JS -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,558 @@
+@charset "UTF-8";
+
+html {
+  font-size: 62.5%; /* 16px × 62.5% = 10px */
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 1080px;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Outfit", "Noto Sans JP", sans-serif;
+  font-size: 1.6rem; /* =16px: 基本文字サイズ */
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    min-width: initial;
+  }
+}
+
+/* メニュー開閉時のスクロール固定 */
+body.is-fixed {
+  overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid #0f7bff;
+  outline-offset: 2px;
+}
+
+address {
+  font-style: normal;
+}
+
+/* =========================
+   フォントウェイト
+========================= */
+.fw-700 {
+  font-weight: 700;
+}
+.fw-600 {
+  font-weight: 600;
+}
+.fw-500 {
+  font-weight: 500;
+}
+.fw-400 {
+  font-weight: 400;
+}
+
+/* =========================
+   ディスプレイのみ
+========================= */
+.pc-only {
+  display: block;
+}
+@media (max-width: 768px) {
+  .pc-only {
+    display: none;
+  }
+}
+
+.sp-only {
+  display: none;
+}
+@media (max-width: 768px) {
+  .sp-only {
+    display: block;
+  }
+}
+
+/* =========================
+   フォントカラー
+========================= */
+.fc-white {
+  color: #fff;
+}
+
+/* =========================
+   背景色
+========================= */
+.bg-white {
+  background-color: #fff;
+}
+
+/* =========================
+   margin
+========================= */
+
+/* =========================
+   Inner
+========================= */
+.inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 2rem;
+  }
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*=============================
+ハンバーガーメニュー
+=============================*/
+.btn-trigger {
+  position: relative;
+  width: 56px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #4282B8;
+}
+
+.btn-trigger span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 1px;
+  background-color: #fff;
+}
+
+.btn-trigger,
+.btn-trigger span {
+  transition: all .5s;
+}
+
+/* 通常時の位置 */
+.btn-trigger span:nth-of-type(1) {
+  transform: translate(-50%, -12px);
+}
+
+.btn-trigger span:nth-of-type(2) {
+  transform: translate(-50%, 0);
+}
+
+.btn-trigger span:nth-of-type(3) {
+  transform: translate(-50%, 12px);
+}
+
+/* 押下時の位置 */
+#btn.active span:nth-of-type(1) {
+  transform: translate(-50%, 0) rotate(45deg);
+}
+
+#btn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+#btn.active span:nth-of-type(3) {
+  transform: translate(-50%, 0) rotate(-45deg);
+}
+
+/* =============================
+   SP メニュー
+============================= */
+.sp-menu-wrapper {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sp-menu-wrapper {
+    display: block;
+    position: fixed;
+    top: 6.9rem;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    padding: 4rem 0 2.6rem;
+    z-index: 100;
+
+    /* アニメーション準備 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+  }
+
+  .sp-menu-wrapper.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .sp-menu__list {
+    width: 100%;
+  }
+
+  .sp-menu__item {
+    margin-bottom: 3.2rem;
+  }
+
+  .sp-menu__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .sp-menu__link {
+    /* 必要に応じてスタイル追加 */
+  }
+}
+
+/* ボタン */
+.btn {
+  display: inline-block;
+  padding: 1rem 4rem;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #000000;
+  color: #fff;
+}
+
+/* カード */
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .card-wrapper {
+    flex-direction: column;
+  }
+}
+
+.card {
+  display: block;
+  width: calc(100% / 3);
+  padding: 1rem 2rem;
+  border: 1px solid #fff;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    border: 1px solid #000000;
+    margin-bottom: 2rem;
+  }
+}
+
+.card:hover {
+  background-color: #000000;
+}
+
+.card__image {
+}
+
+.card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__body {
+}
+
+.card__title {
+}
+
+.card__text {
+}
+/* =========================
+   モーダル
+========================= */
+#mask {
+  background-color: #000000;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#mask.is-active {
+  opacity: 0.7;
+  pointer-events: auto;
+}
+
+#modal {
+  background-color: #fff;
+  width: 860px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  #modal {
+    width: 90%;
+  }
+}
+
+#modal.is-active {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.modal__content {
+  padding: 1.6rem 10.2rem 2.4rem;
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
+@media (max-width: 768px) {
+  .modal__content {
+    padding: 1.6rem 3rem;
+    max-height: 90vh;
+  }
+}
+
+/* ===== スクロールバー全体 ===== */
+.modal__content::-webkit-scrollbar {
+  width: 12px;
+}
+
+@media (max-width: 768px) {
+  .modal__content::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+/* ===== レール（背景） ===== */
+.modal__content::-webkit-scrollbar-track {
+  background: #DAEFEF;
+}
+
+/* ===== つまみ ===== */
+.modal__content::-webkit-scrollbar-thumb {
+  background-color: #9ca3af;
+  border-radius: 999px;
+}
+
+/* ===== hover時 ===== */
+.modal__content::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280;
+}
+
+.modal__header {
+  margin-bottom: 1.6rem;
+}
+
+.modal__title {
+  font-size: clamp(1.8rem, 1.66vw, 2.4rem);
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+
+.modal__body {
+  margin-bottom: 6rem;
+}
+
+.modal__image {
+  width: 100%;
+  margin-bottom: 3.5rem;
+}
+
+.modal__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal__text {
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .modal__text {
+    font-size: 1.4rem;
+  }
+}
+
+.modal__close {
+  margin: 0 auto;
+}
+
+.modal__batsu {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  right: -4.5rem;
+  z-index: 3;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .modal__batsu {
+    width: 20px;
+    height: 20px;
+    top: -2.5rem;
+    right: 0;
+  }
+}
+
+/* ========================
+  Accordion
+======================== */
+
+.accordion-content {
+  display: none;
+  background-color: #FFF;
+  padding: 1rem 2rem;
+}
+
+.accordion-header {
+  padding: 1rem 2rem;
+  transition: background .3s ease;
+  cursor: pointer;
+  position: relative;
+  background-color: #DAEFEF;
+}
+
+.accordion-header::before,
+.accordion-header::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 2rem;
+  bottom: 0;
+  width: 12px;
+  height: 2px;
+  margin: auto;
+  background: #151E2F;
+}
+
+.accordion-header::after {
+  transform: rotate(-90deg);
+  transition: transform 0.3s;
+}
+
+.accordion-header.active::after {
+  transform: rotate(0deg);
+}
+
+.accordion-header span,
+.accordion-content span {
+  padding-left: 2rem;
+  position: relative;
+}
+
+.accordion-header span::before {
+  position: absolute;
+  content: "Q";
+  left: 0;
+  color: #151E2F;
+  font-size: 17px;
+}
+
+.accordion-content span::before {
+  position: absolute;
+  content: "A";
+  left: 0;
+  color: #151E2F;
+  font-size: 17px;
+}
+
+.accordion-header:hover {
+  background-color: #F2F2F2;
+}
+
+/* ========================
+   スライダー(slick)
+======================== */
+.slider-wrapper {
+  margin: 0 auto;
+}
+
+.slider .slick-list {
+  overflow: hidden;
+}
+
+.slider__item {
+  width: 400px;
+  margin-right: 2rem;
+}
+
+@media (max-width: 768px) {
+  .slider__item {
+    width: 200px;
+    margin-right: 1.6rem;
+  }
+}
+
+.slider__card {
+  display: block;
+  width: 100%;
+}
+
+.slider__card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
