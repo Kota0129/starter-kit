@@ -203,7 +203,7 @@ address {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 }
 .header__inner {
   display: flex;
@@ -331,6 +331,7 @@ address {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-100%);
+  pointer-events: none;
 
   transition: 
     transform 0.4s ease,
@@ -343,6 +344,7 @@ address {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
 .header__nav-inner {
