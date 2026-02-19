@@ -1,90 +1,87 @@
 $(function () {
-  // ========================
-  // ハンバーガーメニュー & SPメニュー
-  // ========================
-  const btn  = $('.btn-trigger');
-  const menu = $('.sp-menu-wrapper');
-  const body = $('body');
-  
-  // 開閉処理
-  function toggleMenu() {
-    const isOpen = btn.hasClass('active');
-  
-    btn.toggleClass('active')
-        .attr('aria-expanded', String(!isOpen));
-  
-    menu.toggleClass('is-active');
-    body.toggleClass('is-fixed');
-  }
-  
-  // 閉じる処理
-  function closeMenu() {
-    btn.removeClass('active')
-        .attr('aria-expanded', 'false');
-  
-    menu.removeClass('is-active');
-    body.removeClass('is-fixed');
-  }
-  
-  // ボタンクリック
-  btn.on('click', toggleMenu);
-  
-  // メニューリンククリック
-  menu.on('click', '.sp-menu__link', closeMenu);
 
-  // ========================
-  // モーダル開閉
-  // ========================
-  $('.js-open').on('click', function () {
-    const item = $(this).closest('.modal-wrapper');
-    item.find('.js-modal, .js-mask')
-      .removeClass('hidden')
-      .addClass('is-active');
-    $('body').addClass('is-fixed');
-  });
-  
-  $('.js-close, .js-mask').on('click', function () {
-    const item = $(this).closest('.modal-wrapper');
-    item.find('.js-modal, .js-mask')
-      .removeClass('is-active');
-  
-    setTimeout(function () {
-      item.find('.js-modal, .js-mask')
-        .addClass('hidden');
-    }, 400);
-  
-    $('body').removeClass('is-fixed');
-  });
-  
   // ========================
   // アコーディオン
   // ========================
-  $('.accordion-header').click(function() {
-    $(this).next('.accordion-content').slideToggle();
-    $(this).toggleClass('active');
+  $('.accordion-header').on('click', function () {
+    $(this)
+      .toggleClass('active')
+      .next('.accordion-content')
+      .slideToggle();
   });
+
+
   // ========================
-  // slickスライダー
+  // ハンバーガーメニュー & SPメニュー
   // ========================
-  $('.slider').slick({
-    speed: 2000,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    cssEase: 'ease',
-    arrows: false,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    variableWidth: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          variableWidth: false
-        }
-      }
-    ]
-  });
-  
+  const $btn  = $('.btn-trigger');
+  const $menu = $('.header__nav');
+  const $body = $('body');
+  const $logo = $('.header__logo-link img');
+
+  // ロゴパス定義（可読性向上）
+  const LOGO_WHITE = 'img/tetote-logo-white 1.png';
+  const LOGO_BLACK = 'img/Group 18.png';
+
+
+  // ------------------------
+  // メニューを開く
+  // ------------------------
+  function openMenu() {
+    $btn.addClass('active').attr('aria-expanded', 'true');
+    $menu.addClass('is-active');
+    $body.addClass('is-fixed');
+    $logo.attr('src', LOGO_BLACK);
+  }
+
+  // ------------------------
+  // メニューを閉じる
+  // ------------------------
+  function closeMenu() {
+    $btn.removeClass('active').attr('aria-expanded', 'false');
+    $menu.removeClass('is-active');
+    $body.removeClass('is-fixed');
+    $logo.attr('src', LOGO_WHITE);
+  }
+
+  // ------------------------
+  // トグル処理
+  // ------------------------
+  function toggleMenu() {
+    if ($btn.hasClass('active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  // イベント登録
+  $btn.on('click', toggleMenu);
+  $menu.on('click', '.sp-menu__link', closeMenu);
+
+  // ========================
+// FV スライダー（JS版）
+// ========================
+const $slides = $('.fv__slider-item');
+const slideCount = $slides.length;
+
+let currentIndex = 0;
+const slideInterval = 5000; // 5秒ごとに切替
+
+// 初期表示
+$slides.eq(currentIndex).addClass('is-active');
+
+setInterval(function () {
+
+  // 現在のスライドを非表示
+  $slides.eq(currentIndex).removeClass('is-active');
+
+  // 次のスライド番号
+  currentIndex = (currentIndex + 1) % slideCount;
+
+  // 次のスライドを表示
+  $slides.eq(currentIndex).addClass('is-active');
+
+}, slideInterval);
+
 });

@@ -24,205 +24,193 @@
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
 
   <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=M+PLUS+Rounded+1c:wght@700&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+JP:wght@200..900&family=Viga&family=Zen+Kaku+Gothic+New&family=Zen+Old+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Slick CSS（必要な場合のみ有効化） -->
-  
+  <!--
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
- 
+  -->
 
   <!-- Project CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="header" role="banner">
-    <div class="header__inner inner">
+    <div class="header__inner">
       <h1 class="header__logo">
         <a class="header__logo-link" href="/">
-          <img src="img/logo.svg" alt="サイト名ロゴ">
+          <img src="img/tetote-logo-white 1.png" alt="サイト名ロゴ">
         </a>
       </h1>
-      <nav class="header__nav" aria-label="グローバルナビ">
-        <ul class="header__list">
-          <li class="header__item">
-            <a class="header__link" href="#">Menu</a>
-          </li>
-        </ul>
+      <nav class="header__nav bg-white" aria-label="グローバルナビ">
+        <div class="header__nav-inner inner">
+          <h2 class="header__logo header__logo-menu">
+            <a class="header__logo-link" href="/">
+              <img src="img/tetote-logo-white 1.png" alt="サイト名ロゴ">
+            </a>
+          </h2>
+          <div class="header__nav-content">
+            <div class="header__nav-content-inner">
+              <ul class="header__list">
+                <li class="header__item">
+                  <a class="header__link " href="#">
+                    <span class="header__link-title viga-regular">ABOUT US</span>
+                    <span class="header__link-subTitle fw-700">TETOTEについて</span>
+                  </a>
+                </li>
+                <li class="header__item">
+                  <a class="header__link " href="#">
+                    <span class="header__link-title viga-regular">STAFF</span>
+                    <span class="header__link-subTitle fw-700">社員について</span>
+                  </a>
+                </li>
+                <li class="header__item">
+                  <a class="header__link " href="#">
+                    <span class="header__link-title viga-regular">BLOG</span>
+                    <span class="header__link-subTitle fw-700">採用ブログ</span>
+                  </a>
+                </li>
+              </ul>
+              <ul class="header__list">
+                <li class="header__item">
+                  <a class="header__link " href="#">
+                    <span class="header__link-title viga-regular">BENEFITS</span>
+                    <span class="header__link-subTitle fw-700">福利厚生について</span>
+                  </a>
+                </li>
+                <li class="header__item">
+                  <a class="header__link " href="#">
+                    <span class="header__link-title viga-regular">CARRER</span>
+                    <span class="header__link-subTitle fw-700">研修制度とキャリアパス</span>
+                  </a>
+                </li>
+                <li class="header__item">
+                  <a class="header__link " href="#">
+                    <span class="header__link-title viga-regular">FAQ</span>
+                    <span class="header__link-subTitle fw-700">よくある質問</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="header__contact header__nav-contact fc-white">
+              <a class="btn header__contact-link header__contact-nav-link bg-black" href="#">募集要項</a>
+              <a class="btn header__contact-link header__contact-nav-link bg-green" href="#">ENTRY</a>
+            </div>
+          </div>
+        </div>
       </nav>
-
-      <!-- ①ハンバーガーメニュー -->
-      <button class="btn-trigger sp-only" id="btn" aria-label="メニューを開く" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <!-- ②SPメニュー -->
-      <div class="sp-menu-wrapper">
-        <nav class="sp-menu" aria-label="グローバルナビ">
-          <ul class="sp-menu__list">
-            <li class="sp-menu__item">
-              <a class="sp-menu__link" href="#">トップページ</a>
-            </li>
-            <li class="sp-menu__item">
-              <a class="sp-menu__link" href="#">トップページ</a>
-            </li>
-            <li class="sp-menu__item">
-              <a class="sp-menu__link" href="#">トップページ</a>
-            </li>
-            <li class="sp-menu__item">
-              <a class="sp-menu__link" href="#">トップページ</a>
-            </li>
-            <li class="sp-menu__item">
-              <a class="sp-menu__link" href="#">トップページ</a>
-            </li>
-            <li class="sp-menu__item">
-              <a class="sp-menu__link" href="#">トップページ</a>
-            </li>
-            <li class="sp-menu__item">
-              <a class="sp-menu__link" href="#">トップページ</a>
-            </li>
-            <li class="sp-menu__item">
-              <a class="sp-menu__link" href="#">トップページ</a>
-            </li>
-          </ul>
-        </nav>
+    <div class="header__btn-wrapper">
+      <div class="header__contact fc-white">
+        <a class="btn header__contact-link bg-black" href="#">募集要項</a>
+        <a class="btn header__contact-link bg-green" href="#">ENTRY</a>
       </div>
+      <button class="btn-trigger" id="btn" aria-label="メニューを開く" aria-expanded="false">
+        <span class="btn-trigger__inner">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="btn-trigger-text fc-white">MENU</span>
+      </button>
     </div>
   </header>
 
   <main id="main" role="main">
-    <section class="section">
-      <h2 class="section__title">ページタイトル</h2>
-      <p class="section__lead">概要テキスト</p>
-      <a class="btn" href="#">ボタンテキスト</a>
-
-      <!-- ③ボタン -->
-      <a class="btn" href="#">お問い合わせ</a>
-
-      <!-- ④カード -->
-      <div class="card-wrapper inner">
-        <a class="card" href="#">
-          <div class="card__image">
-            <img src="img/house01 1.png" alt="img01">
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">タイトル</h3>
-            <p class="card__text">概要テキスト</p>
-          </div>
-        </a>
-        <a class="card" href="#">
-          <div class="card__image">
-            <img src="img/house02 1.png" alt="img01">
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">タイトル</h3>
-            <p class="card__text">概要テキスト</p>
-          </div>
-        </a>
-        <a class="card" href="#">
-          <div class="card__image">
-            <img src="img/house03 1.png" alt="img01">
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">タイトル</h3>
-            <p class="card__text">概要テキスト</p>
-          </div>
-        </a>
-        <a class="card" href="#">
-          <div class="card__image">
-            <img src="img/house01 1.png" alt="img01">
-          </div>
-          <div class="card__body">
-            <h3 class="card__title">タイトル</h3>
-            <p class="card__text">概要テキスト</p>
-          </div>
-        </a>
+    <div class="fv">
+      <div class="fv__slider">
+        <div class="fv__slider-item" style="background-image: url(../img/fv01.png);"></div>
+        <div class="fv__slider-item" style="background-image: url(../img/fv02.png);"></div>
       </div>
+      <div class="fv__inner">
+        <h2 class="fv__title fw-400 fc-white fv-inner viga-regular">BECOME A <br>CHALLENGER.</h2>
+        <h3 class="fv__subtitle fw-700 fc-white bg-black tx-center">君の挑戦が、意思が、未来を変える</h3>
+      <a class="btn fv__btn fv-inner" href="#">
+        <div class="fv__btn-inner">
+          <span class="fv__btn-inner-title viga-regular fc-white bg-black">NEWS</span>
+          <span class="fv__btn-inner-text bg-white ">新入社員向けに、入社前研修を行いました。</span>
+        </div>
+      </a>
+      </div>
+    </div>
 
-      <!-- ⑤モーダル -->
-      <div class="modal-wrapper inner">
-        <button id="open" class="btn modal__link js-open">
-          モーダルへ
-        </button>
-      
-        <div id="mask" class="hidden js-mask"></div>
-      
-        <div id="modal" class="hidden js-modal">
-          <div class="modal__batsu js-close">
-            <img src="img/細いバツのアイコン (1) 1.png" alt="閉じる">
-          </div>
-      
-          <div class="modal__content">
-            <div class="modal__header fc-blue">
-              <span class="modal__badge">更新情報</span>
-              <span class="modal__date">2024.05.01</span>
-            </div>
-      
-            <h3 class="modal__title">タイトル</h3>
-      
-            <div class="modal__body">
-              <div class="modal__image">
-                <img src="img/house01 1.png" alt="img01">
+    <section class="success">
+      <div class="success__inner inner">
+        <h2 class="sec__title fw-700 fc-white tx-center mb-130">TOEFL成功事例</h2>
+          <div class="card-wrapper">
+            <div class="card" href="#">
+              <h3 class="card__title fc-white">TOEFL iBT 100点を突破してコロンビア大学大学院に進学できました！</h3>
+              <div class="card__image bg-white">
+                <img src="img/model01.png" alt="img01">
               </div>
-      
-              <p class="modal__text">
-                弊社は、お客様により良いサービスを提供するため、ホームページをリニューアルいたしました。新しいデザインと使いやすさを追求し、お客様が情報をより簡単に見つけられるように工夫しました。<br>
-                新しいホームページでは、以下のような改善点がございます：<br><br>
-                ・モダンでスタイリッシュなデザインにより、情報の見やすさと視覚的な魅力を向上<br>
-                ・より直感的で分かりやすいナビゲーションメニューにより、目的の情報へのアクセスがスムーズになりました<br>
-                ・より多くの情報やサービスを掲載し、お客様のニーズに合った情報を提供するようになりました<br>
-                ・モバイルフレンドリーなデザインで、スマートフォンやタブレットからも快適に閲覧できます<br><br>
-                弊社のホームページは、お客様とのコミュニケーションや情報提供の重要なツールです。より使いやすく、わかりやすいホームページを提供することで、お客様との良好な関係を築いていくことが目標です。<br><br>
-                ぜひ、新しいホームページをご覧いただき、お客様のご意見やご要望をお聞かせください。今後もお客様により良いサービスを提供できるよう努めてまいります。
-              </p>
+              <div class="card__body">
+                <p class="card__job bg-white">会社員</p>
+                <p class="card__name bg-white">T.Fujiyamaさん</p>
+              </div>
+              <p class="card__result bg-white">3ヶ月でTOEFL80→108点</p>
             </div>
-      
-            <button class="btn modal__close js-close">
-              閉じる
-            </button>
+            <div class="card" href="#">
+              <h3 class="card__title fc-white">半年でTOEFL 40点→100点を達成！コロンビア大学大学院に合格</h3>
+              <div class="card__image bg-white">
+                <img src="img/model02.png" alt="img01">
+              </div>
+              <div class="card__body">
+                <p class="card__job bg-white">大学生</p>
+                <p class="card__name bg-white">Y.Takiyamaさん</p>
+              </div>
+              <p class="card__result bg-white">6ヶ月でTOEFL40→100点</p>
+            </div>
+            <div class="card" href="#">
+              <h3 class="card__title fc-white">早稲田大学 国際教養学部AO入試合格！TOEFL iBT 109点</h3>
+              <div class="card__image bg-white">
+                <img src="img/model03.png" alt="img01">
+              </div>
+              <div class="card__body">
+                <p class="card__job bg-white">高校生</p>
+                <p class="card__name bg-white">M.Yamadaさん</p>
+              </div>
+              <p class="card__result bg-white">5ヶ月でTOEFL68→109点</p>
+            </div>
+          </div>
+          
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="faq__inner inner">
+        <h2 class="sec__title fw-700 fc-blue tx-center mb-48">よくある質問</h2>
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>Engressはサラリーマンでも学習を続けられるでしょうか？</span>
+          </div>
+          <div class="accordion-content">
+            <span>Engressは各個人に最適な学習プランをご提供しております。サラリーマンの方でも継続できます。</span>
+          </div>
+        
+          <div class="accordion-header">
+            <span>教材はオリジナルのものを使用しているのでしょうか？</span>
+          </div>
+          <div class="accordion-content">
+            <span>アコーディオンコンテンツ</span>
+          </div>
+        
+          <div class="accordion-header">
+            <span>講師に日本人はいますか？</span>
+          </div>
+          <div class="accordion-content">
+            <span>アコーディオンコンテンツ</span>
+          </div>
+
+          <div class="accordion-header">
+            <span>TOEFL以外の海外大学合格のサポートもしてもらえるのでしょうか？</span>
+          </div>
+          <div class="accordion-content">
+            <span>アコーディオンコンテンツ</span>
           </div>
         </div>
       </div>
-
-      <!-- ⑥アコーディオン -->
-      <div class="accordion inner">
-        <div class="accordion-header">
-          <span>アコーディオン見出し</span>
-        </div>
-        <div class="accordion-content">
-          <span>アコーディオンコンテンツ</span>
-        </div>
-      
-        <div class="accordion-header">
-          <span>アコーディオン見出し</span>
-        </div>
-        <div class="accordion-content">
-          <span>アコーディオンコンテンツ</span>
-        </div>
-      
-        <div class="accordion-header">
-          <span>アコーディオン見出し</span>
-        </div>
-        <div class="accordion-content">
-          <span>アコーディオンコンテンツ</span>
-        </div>
-      </div>
-
-      <!-- ⑦スライダー -->
-      <div class="slider-wrapper inner">
-        <ul class="slider">
-          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house01 1.png" alt="img01"></a></li>
-          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house02 1.png" alt="img02"></a></li>
-          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house03 1.png" alt="img03"></a></li>
-          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house01 1.png" alt="img04"></a></li>
-          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house02 1.png" alt="img05"></a></li>
-          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house03 1.png" alt="img06"></a></li>
-          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house01 1.png" alt="img07"></a></li>
-          <li class="slider__item"><a class="slider__card" href="#"><img src="img/house02 1.png" alt="img08"></a></li>
-        </ul>
-      </div>
-      
     </section>
   </main>
 
@@ -234,9 +222,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
 
   <!-- Slick JS（必要な場合のみ有効化） -->
-  
+  <!--
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
- 
+  -->
 
   <!-- Project JS -->
   <script src="js/main.js" defer></script>
