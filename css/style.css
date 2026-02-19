@@ -565,9 +565,6 @@ address {
 }
 
 /* =========================
-   ファーストビュー
-========================= */
-/* =========================
    ファーストビュー（スライダー実装）
 ========================= */
 .fv {
@@ -613,8 +610,8 @@ address {
 .fv__slider-item.is-active {
   opacity: 1;
 }
-/* 
-.fv__slider-item:nth-child(1) {
+
+/* .fv__slider-item:nth-child(1) {
   animation-delay: 0s;
 }
 .fv__slider-item:nth-child(2) {
